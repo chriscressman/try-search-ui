@@ -1,5 +1,5 @@
 import AppSearchAPIConnector from '@elastic/search-ui-app-search-connector'
-import { SearchProvider, SearchBox } from '@elastic/react-search-ui'
+import { SearchProvider, SearchBox, Results } from '@elastic/react-search-ui'
 import { Layout } from '@elastic/react-search-ui-views'
 
 const ENTERPRISE_SEARCH_BASE_URL = 'https://try-search-ui.ent.us-central1.gcp.cloud.es.io';
@@ -19,7 +19,7 @@ function App() {
   return (
     <SearchProvider config={{apiConnector: connector}}>
       <div className="App">
-        <Layout header={<SearchBox />} bodyContent="Body" />
+        <Layout header={<SearchBox />} bodyContent={<Results />} />
       </div>
     </SearchProvider>
   );
