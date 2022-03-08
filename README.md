@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+Create an Elastic deployment
+Use the sample engine
+Find the engine name
+Find the base URL
+Find the search key
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Create a React app
+`nvm use 17.6.0`
+`npm init react-app try-search-ui`
+`cd try-search-ui`
+`npm start`
 
-## Available Scripts
+Install Search UI packages from npm
+`npm install --save-prod @elastic/search-ui-app-search-connector`
+`npm install --save-prod @elastic/react-search-ui`
 
-In the project directory, you can run:
+Clear out the default content for the App component
 
-### `npm start`
+Start by roughly following the getting started experience in the README, but be more explicit about each step
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Define a configuration for an `AppSearchAPIConnector`
+Use the values from the Elastic deployment
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Initialize an AppSearchAPIConnector
+Use the connector configuration
 
-### `npm test`
+Add a SearchProvider element to the App component
+Pass it a `config` prop that includes a reference to the connector
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Add a Layout element to the App component
+Add placeholder content for `header` and `bodyContent`
 
-### `npm run build`
+Replace header content placeholder with a SearchBox element
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Replace body content placeholder with a Results element
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Add default CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Search, and view the results
 
-### `npm run eject`
+Layout also provides a sidebar, which is currently empty
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+What are all the primitives provided by these packages?
+Change to a bottom-up method of exploration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clear the changes I made
+Import everything
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Explore the installed packages
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+@elastic/search-ui
+  SearchDriver
+  helpers
+@elastic/search-ui-app-search-connector
+  default
+@elastic/react-search-ui
+  ErrorBoundary
+  Facet
+  Paging
+  PagingInfo
+  Result
+  Results
+  ResultsPerPage
+  SearchBox
+  SearchContext
+  SearchProvider
+  Sorting
+  WithSearch
+  withSearch
+@elastic/react-search-ui-views
+  Autocomplete
+  BooleanFacet
+  ErrorBoundary
+  Facets
+  Layout
+  MultiCheckboxFacet
+  Paging
+  PagingInfo
+  Result
+  Results
+  ResultsPerPage
+  SearchBox
+  SingleLinksFacet
+  SingleSelectFacet
+  Sorting
+```
