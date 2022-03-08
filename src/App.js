@@ -1,4 +1,5 @@
 import AppSearchAPIConnector from '@elastic/search-ui-app-search-connector'
+import { SearchProvider } from '@elastic/react-search-ui'
 
 const ENTERPRISE_SEARCH_BASE_URL = 'https://try-search-ui.ent.us-central1.gcp.cloud.es.io';
 const APP_SEARCH_SEARCH_KEY = 'search-eaesy8bpwje7u7jgtydgs846';
@@ -15,8 +16,10 @@ const connector = new AppSearchAPIConnector(connectorConfiguration);
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <SearchProvider config={{apiConnector: connector}}>
+      <div className="App">
+      </div>
+    </SearchProvider>
   );
 }
 
