@@ -69,6 +69,7 @@ Explore the installed packages
   WithSearch
   withSearch
 @elastic/react-search-ui-views
+  ./lib/styles/styles.css'
   Autocomplete
   BooleanFacet
   ErrorBoundary
@@ -85,3 +86,65 @@ Explore the installed packages
   SingleSelectFacet
   Sorting
 ```
+
+There is one stylesheet
+
+```
+@elastic/react-search-ui-views
+  ./lib/styles/styles.css'
+```
+
+Everything else is JavaScript
+Three APIs are vanilla JS
+I would explore those first
+
+```
+@elastic/search-ui
+  SearchDriver
+  helpers
+@elastic/search-ui-app-search-connector
+  default
+```
+
+Everything else is a React component
+
+```
+@elastic/react-search-ui
+  ErrorBoundary
+  Facet
+  Paging
+  PagingInfo
+  Result
+  Results
+  ResultsPerPage
+  SearchBox
+  SearchContext
+  SearchProvider
+  Sorting
+  WithSearch
+  withSearch
+@elastic/react-search-ui-views
+  Autocomplete
+  BooleanFacet
+  ErrorBoundary
+  Facets
+  Layout
+  MultiCheckboxFacet
+  Paging
+  PagingInfo
+  Result
+  Results
+  ResultsPerPage
+  SearchBox
+  SingleLinksFacet
+  SingleSelectFacet
+  Sorting
+```
+
+Why are the components split between two libraries?
+It has to do with some React patterns that I'm not familiar with
+Components that take responsibility for rendering other components
+
+I started learning React recently, using up-to-date resources
+I didn't encounter these patterns, so maybe they are a bit older?
+It seems like React changed its architecture when it introduced hooks
